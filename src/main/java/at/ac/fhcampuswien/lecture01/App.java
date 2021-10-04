@@ -29,6 +29,7 @@ public class App {
                 + "Phasellus efficitur in felis et varius. Vivamus at sollicitudin nunc. Nulla facilisi. "
                 + "Cras elementum lectus id turpis egestas bibendum. Nam maximus efficitur leo, varius aliquet sapien malesuada sit amet."
         );
+
         /**
          * VARIABLES
          *
@@ -43,7 +44,7 @@ public class App {
 
         System.out.println(myInteger);  // prints "1" to the console
         System.out.println(myInteger + 2); // prints the sum of 1 + 2 -> "3"
-        System.out.println(myInteger + myCharacterSequence); // prints "1Hello World!" -> Strings and numeric values are concatinated
+        System.out.println(myInteger + myCharacterSequence); // prints "1Hello World!" -> Strings and numeric values are concatenated
         // System.out.println(mySecondInteger); // compilation error -> "variable mySecondInteger might not have been initialized"
 
         /** Override variables **/
@@ -58,6 +59,13 @@ public class App {
         myInteger--; // decrease by 1
         myInteger -= 1;
 
+        /** Difference between myVar++ and ++myVar **/
+        int a = 1;
+        System.out.println(a++ + ++a);  // 4 -> ++a immediately returns the incremented value
+        int b = 1;
+        System.out.println(b++ + b++); // 3 -> b++ increments after the additional operation is done
+        System.out.println("b's value is " + b + " now.");  // 3
+
         /** Variable Types **/
         // Char is a single 16-bit Unicode character
         char character = 'a';
@@ -65,8 +73,8 @@ public class App {
         //System.out.println("You can also do calculations based on the unicode table: " + ('d' - 3));    // 'd' is represented with '100' in decimal
 
         // String is a sequence of chars
-        String myString = "Hello";
-
+        String myString = "Hello\u0025";
+        System.out.println(myString);
         // Boolean data type is used to store only two possible values: true and false
         boolean myBoolean = false;
 
@@ -81,6 +89,12 @@ public class App {
         // Int range lies between - 2,147,483,648 (-2^31) to 2,147,483,647 (2^31 -1)
         // The int data type is generally used as a default data type for integral values unless if there is no problem about memory.
         int myInt = 230000000;
+
+        // overflow example
+        int maxInt = Integer.MAX_VALUE;
+        System.out.println("Highest int value: " + maxInt);
+        maxInt++;
+        System.out.println("Int overflow example: " + maxInt);
 
         // Long range lies between -9,223,372,036,854,775,808(-2^63) to 9,223,372,036,854,775,807(2^63 -1)
         // Its default value is 0. The long data type is used when you need a range of values more than those provided by int.
@@ -109,7 +123,25 @@ public class App {
         int doubleToInt = (int)myDouble;    // convert double to int - this will lead to rounded values
         System.out.println(myDouble + " will be rounded to: " + doubleToInt);
         String doubleToString = Double.toString(myDouble);  // convert a double to string
-        int stringToInt = Integer.parseInt("10"); // convert a string to int
+        int stringToInt = Integer.parseInt("10"); // convert a string to int - note: this can throw an exception if the string is no number!!
+
+        /** Rules for Type Casting
+         *
+         **/
+
+         // Implicit type casting when converting a lower data type into higher one
+         // It is save because there is no chance to loose data
+         // byte -> short -> char -> int -> long -> float -> double
+         int x = 8;
+         long y = x;
+         float z = y;
+
+         // Explicit conversion when converting a higher to lower type
+         // Note: this might lead to lost data!
+         // double -> float -> long -> int -> char -> short -> byte
+         double d = 166.66;
+         long l = (long)d;  // 166
+         int i = (int)l; // 166
 
 
         /**
@@ -177,5 +209,8 @@ public class App {
 
         System.out.println("Welcome " + userName + "!");
 
+
+
+        System.out.println("End of main()");
     }
 }
