@@ -3,6 +3,9 @@ package at.ac.fhcampuswien.lecture01;
 import java.util.Scanner;
 
 public class App {
+    static Scanner scanner = new Scanner(System.in);
+
+
     /**
      *
      * Main entry point of a java application
@@ -22,12 +25,22 @@ public class App {
         System.out.println(100 - 50);   // prints 50
 
         /** Escape Characters **/
-        System.out.println("I'm followed by 2 linebreaks\n\nNext will be 3 tab spaces\t\t\tTo use single quotes inside a string you must escape them \"Hello!\"");
+        System.out.println("I'm followed by 2 linebreaks\\n\nNext will be 3 tab spaces\t\t\tTo use single quotes inside a string you must escape them \"Hello!\"");
         System.out.println("You can also do some multiline console prints like this:\n"
                 + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper et sapien vel placerat. "
                 + "Phasellus efficitur in felis et varius. Vivamus at sollicitudin nunc. Nulla facilisi.\n "
                 + "To print a tabluator sign you must escape it \\."
         );
+
+
+
+
+
+
+
+
+
+
 
         /**
          * VARIABLES
@@ -60,10 +73,10 @@ public class App {
 
         /** Difference between myVar++ and ++myVar **/
         int a = 1;
-        System.out.println(a++ + ++a);  // 4 -> ++a immediately returns the incremented value
+        System.out.println(a++ + ++a); //4
         int b = 1;
-        System.out.println(b++ + b++); // 3 -> b++ increments after the additional operation is done
-        System.out.println("b's value is " + b + " now.");  // 3
+        System.out.println(b++ + b++); //3
+        System.out.println("b's value is " + b + " now.");
 
         /** Variable Types **/
         // Char is a single 16-bit Unicode character
@@ -111,6 +124,8 @@ public class App {
         // The double data type also should never be used for precise values, such as currency. Its default value is 0.0d.
         double myDouble = 12.3;
         double powerOf = 12.3e1; // e stands for exponent -> == 12,3 * 10^1; in code: 12.3 * Math.pow(10, 1)
+
+
 
         /**
          * Type Casting
@@ -196,15 +211,14 @@ public class App {
         }
 
 
+
+
         /**
          * USER INPUT in console
          */
-        Scanner scanner = new Scanner(System.in);   // a scanner can get input from a specific input stream - in this case the input in console
-
         System.out.println("Hello! Please enter your age:");
-        String userInput = scanner.nextLine();
-        scanner.nextInt();
-        //int userAge = Integer.parseInt(scanner.nextLine()); // save user input in variable after typing and clicking enter
+
+        int userAge = scanner.nextInt(); // save user input in variable after typing and clicking enter
 
         System.out.println("Please enter your name:");
         String userName = scanner.nextLine();
