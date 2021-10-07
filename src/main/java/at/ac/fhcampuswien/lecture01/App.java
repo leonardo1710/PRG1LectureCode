@@ -16,9 +16,8 @@ public class App {
          * The Java console provides information about the Java version, directories and error messages that
          * occure while running an application.
          */
-        // Print a text (eg String) to the console
-        System.out.print("Hello Java console!");
-        System.out.println("This includes a linebreak");   // println() does include a linebreak
+        System.out.print("Hello Java console!"); // Print a text (eg String) to the console
+        System.out.println("This includes a linebreak"); // println() does include a linebreak
         // You can do calculations inside a console print statement
         System.out.println(100 - 50);   // prints 50
 
@@ -26,8 +25,8 @@ public class App {
         System.out.println("I'm followed by 2 linebreaks\n\nNext will be 3 tab spaces\t\t\tTo use single quotes inside a string you must escape them \"Hello!\"");
         System.out.println("You can also do some multiline console prints like this:\n"
                 + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper et sapien vel placerat. "
-                + "Phasellus efficitur in felis et varius. Vivamus at sollicitudin nunc. Nulla facilisi. "
-                + "Cras elementum lectus id turpis egestas bibendum. Nam maximus efficitur leo, varius aliquet sapien malesuada sit amet."
+                + "Phasellus efficitur in felis et varius. Vivamus at sollicitudin nunc. Nulla facilisi.\n "
+                + "To print a tabluator sign you must escape it \\."
         );
 
         /**
@@ -70,7 +69,7 @@ public class App {
         // Char is a single 16-bit Unicode character
         char character = 'a';
         char character2 = '\u0025'; // this is a unicode representation of "%"
-        //System.out.println("You can also do calculations based on the unicode table: " + ('d' - 3));    // 'd' is represented with '100' in decimal
+        System.out.println("You can also do calculations based on the unicode table: " + ('d' - 3));    // 'd' is represented with '100' in decimal
 
         // String is a sequence of chars
         String myString = "Hello\u0025";
@@ -105,6 +104,7 @@ public class App {
         // The float data type should never be used for precise values, such as currency. Its default value is 0.0F.
         float myFloat = 234.5f;
         float f = 44e-1f; // e stands for exponent -> == 44 * Math.pow(10, -1)
+        System.out.println("My Float: " + f);
 
         // Double data type is a double-precision 64-bit IEEE 754 floating point.
         // Its value range is unlimited. The double data type is generally used for decimal values just like float.
@@ -119,7 +119,6 @@ public class App {
          * with variables or values from other types.
          * In this case you need to use type-casting to correctly convert types.
          */
-
         int doubleToInt = (int)myDouble;    // convert double to int - this will lead to rounded values
         System.out.println(myDouble + " will be rounded to: " + doubleToInt);
         String doubleToString = Double.toString(myDouble);  // convert a double to string
@@ -201,8 +200,11 @@ public class App {
          * USER INPUT in console
          */
         Scanner scanner = new Scanner(System.in);   // a scanner can get input from a specific input stream - in this case the input in console
+
         System.out.println("Hello! Please enter your age:");
-        int userAge = Integer.parseInt(scanner.nextLine()); // save user input in variable after typing and clicking enter
+        String userInput = scanner.nextLine();
+        scanner.nextInt();
+        //int userAge = Integer.parseInt(scanner.nextLine()); // save user input in variable after typing and clicking enter
 
         System.out.println("Please enter your name:");
         String userName = scanner.nextLine();
