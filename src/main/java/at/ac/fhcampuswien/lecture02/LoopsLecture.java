@@ -5,6 +5,46 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class LoopsLecture {
+
+    public static void main(String[] args) {
+        // Uncomment functions to run the examples
+
+
+        //printLoops();
+
+        //printMenu();
+
+        //printPyramid();
+
+        //printOtherPyramid();
+
+        //printAlphabetPyramid();
+
+        //scannerExamples();
+    }
+
+    public static void scannerExamples(){
+        Scanner scanner = new Scanner(System.in);   // initialize scanner
+
+        System.out.print("Enter x:");
+        // String userInput = scanner.nextLine(); // read a String input from console
+        int x = scanner.nextInt();  // read an integer token from console
+        System.out.print("Enter y:");
+        int y = scanner.nextInt();
+
+        System.out.println("x: " + x + " y: " + y + " ");
+
+        System.out.println("Enter floating point number z:");
+        double z = scanner.nextDouble();
+
+        System.out.printf("z: %.4f", z); // use printf to format the printed string -> in this case a floating point number with 4 decimals
+        System.out.printf(Locale.US, "z: %.4f", z); // example from before with a given locale -> US means "."
+
+        String formattedString = String.format(Locale.US, "%.4f", z); // use String format to format a given string before it is printed
+        System.out.println(formattedString);
+
+    }
+
     /**
      * Deciding which loop to use
      *
@@ -19,23 +59,9 @@ public class LoopsLecture {
      *
      * For
      *      You know the exact times you need to loop.
-     *      Ex.: looping arrays
+     *      Ex.: looping arrays [1, 2, 3] -> 1 * 1, 2*2, 3*3
      */
-
-    public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);   // initialize scanner
-        System.out.println("Enter x:");
-        int x = scanner.nextInt();
-        System.out.println("Enter y:");
-        int y = scanner.nextInt();
-        System.out.println("x: " + x + " y: " + y);
-
-        double z = scanner.nextDouble();
-
-        System.out.println("z: " + String.format(Locale.US, "%.4f", z));
-
-
+    public static void printLoops(){
         /**
          * WHILE LOOP
          *
@@ -45,6 +71,7 @@ public class LoopsLecture {
          */
         System.out.println("While Loop:");
         int count = 0;
+
         while(count < 5){
             System.out.println("count: " + count);
             count++;
@@ -71,25 +98,17 @@ public class LoopsLecture {
          * to use the for loop
          */
         System.out.println("For Loop:");
-        for(int count3 = 5; count3 > 0; count3--){
+        for(int count3 = 0; count3 < 5; count3++){
             System.out.println("Count: " + count3);
         }
 
-        //printMenu();
-
-        //printPyramid();
-
-
-        //printOtherPyramid();
-
-        //printAlphabetPyramid();
     }
 
     /**
      * Prints a menu until specific value is entered
      */
     public static void printMenu(){
-        int userInput = 0;
+        int userInput;
         int sum = 0;
         Scanner scanner = new Scanner(System.in);
 
