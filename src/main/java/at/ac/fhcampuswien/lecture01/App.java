@@ -3,8 +3,6 @@ package at.ac.fhcampuswien.lecture01;
 import java.util.Scanner;
 
 public class App {
-    static Scanner scanner = new Scanner(System.in);
-
 
     /**
      *
@@ -25,21 +23,12 @@ public class App {
         System.out.println(100 - 50);   // prints 50
 
         /** Escape Characters **/
-        System.out.println("I'm followed by 2 linebreaks\\n\nNext will be 3 tab spaces\t\t\tTo use single quotes inside a string you must escape them \"Hello!\"");
+        System.out.println("I'm followed by 2 linebreaks\n\nNext will be 3 tab spaces\t\t\tTo use single quotes inside a string you must escape them \"Hello!\"");
         System.out.println("You can also do some multiline console prints like this:\n"
                 + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper et sapien vel placerat. "
                 + "Phasellus efficitur in felis et varius. Vivamus at sollicitudin nunc. Nulla facilisi.\n "
-                + "To print a tabluator sign you must escape it \\."
+                + "To print a tabluator sign you must escape it \\t."
         );
-
-
-
-
-
-
-
-
-
 
 
         /**
@@ -126,6 +115,11 @@ public class App {
         double powerOf = 12.3e1; // e stands for exponent -> == 12,3 * 10^1; in code: 12.3 * Math.pow(10, 1)
 
 
+        int myInt2 = 10;
+        int myInt3 = 1;
+
+        double xd = 12.3 * Math.pow(myInt2, myInt3);
+
 
         /**
          * Type Casting
@@ -166,12 +160,17 @@ public class App {
          */
 
         /** DECISION MAKING **/
-        int age = 12;
+        int age = 19;
 
+        boolean myBool = false;
         // IF Statement
         if(age < 18){   // checks whether the operator resolves to true or false
             System.out.println("The age is < 18");  // this line is only executed if age is < 18
         }
+
+
+
+
 
         // IF-ELSE Statement
         if(age >= 18){
@@ -193,7 +192,23 @@ public class App {
 
         /** SWITCH Statement **/
         // Is normally used to define small limited cases that can happen
-        String fruit = "apple";
+        String fruit = "Apple";
+
+        if("Apple" == "apple"){
+
+        }
+
+        int userInput = 1;
+
+        switch (userInput) {
+            case 1:
+            case 2:
+                System.out.println("You tipped 2.");
+                break;
+            default:
+                System.out.println("You tipped something else.");
+                break;
+        }
 
         switch (fruit){
             case "apple":
@@ -216,15 +231,19 @@ public class App {
         /**
          * USER INPUT in console
          */
+
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Hello! Please enter your age:");
 
-        int userAge = scanner.nextInt(); // save user input in variable after typing and clicking enter
+        String userAge = scanner.nextLine(); // save user input in variable after typing and clicking enter
 
         System.out.println("Please enter your name:");
         String userName = scanner.nextLine();
 
         System.out.println("Welcome " + userName + "!");
 
+        scanner.close();    // always close a scanner!
 
 
         System.out.println("End of main()");
