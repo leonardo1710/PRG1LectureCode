@@ -182,7 +182,7 @@ public class App {
         // IF-ELSE-IF Ladder
         if(age < 12){
             // child
-        } else if(age >= 12 && age <= 18){
+        } else if(age >= 12 && age <= 18 || (true && false)){
             // teen
         } else if(age > 19 && age < 30){
             // twen
@@ -198,7 +198,26 @@ public class App {
 
         }
 
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your age:");
+        String age2 = scanner.nextLine();
+
+        switch (age2){
+            case "j":
+                System.out.println("Sweet 16!");
+                break;
+            case "n":
+                System.out.println("Sweet 18!");
+                break;
+            default:
+                System.out.println("You tipped something else.");
+                break;
+        }
+
+
         int userInput = 1;
+
 
         switch (userInput) {
             case 1:
@@ -232,7 +251,7 @@ public class App {
          * USER INPUT in console
          */
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner2 = new Scanner(System.in);
 
         System.out.println("Hello! Please enter your age:");
 

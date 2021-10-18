@@ -9,14 +9,13 @@ public class LoopsLecture {
     public static void main(String[] args) {
         // Uncomment functions to run the examples
 
-
-        //printLoops();
+        // printLoops();
 
         //printMenu();
 
-        //printPyramid();
+        printPyramid();
 
-        //printOtherPyramid();
+        printOtherPyramid();
 
         //printAlphabetPyramid();
 
@@ -70,8 +69,10 @@ public class LoopsLecture {
          * it is recommended to use a while loop.
          */
         System.out.println("While Loop:");
-        int count = 0;
+        int count = 1;
 
+
+        System.out.println("hdhdhd");
         while(count < 5){
             System.out.println("count: " + count);
             count++;
@@ -90,6 +91,12 @@ public class LoopsLecture {
             System.out.println("Count: " + count2);
             count2++;
         }while (count2 < 5);
+
+
+        System.out.printf("%.2f", 23.4555);
+
+        String myFormattedTest = String.format("%.2f",23.4555);
+        System.out.println(myFormattedTest);
 
         /**
          * FOR LOOP
