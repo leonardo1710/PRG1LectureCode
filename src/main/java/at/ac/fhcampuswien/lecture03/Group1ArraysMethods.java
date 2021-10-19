@@ -3,9 +3,6 @@ package at.ac.fhcampuswien.lecture03;
 import java.util.Scanner;
 
 public class Group1ArraysMethods {
-    public static String x = "";
-
-
     public static void main(String[] args) {
         int[] myArr = new int[5]; // {0,0,0,0,0}
 
@@ -19,13 +16,13 @@ public class Group1ArraysMethods {
         Scanner scanner = new Scanner(System.in);
         length = scanner.nextInt();
 
-        String[] fruits = new String[length]; // {null,null,null}
+        String[] fruits = new String[length]; // {null,null,null} - if length == 3
         fruits[0] = "bananas";// {"bananas",null,null}
 
         boolean[] myConditions = new boolean[2]; // {false,false}
 
 
-        int[] myArr2 = new int[4]; // {0,0,0}
+        int[] myArr2 = new int[4]; // {0,0,0,0}
 
         for(int i = 0; i < myArr2.length; i++){
             myArr2[i] = i + 1;
@@ -33,11 +30,11 @@ public class Group1ArraysMethods {
 
         printArray(myArr2);
 
-        double result = divide(5, 10.93);
+        double result = divide(5, 10.93); // will call divide(double,double)
 
         System.out.println("My result: " + result);
 
-        double result2 = divide(5, 0);
+        double result2 = divide(5, 0);  // will call divide(int,int)
 
         System.out.println("My result2: " + result2);
     }
