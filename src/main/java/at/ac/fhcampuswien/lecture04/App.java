@@ -6,22 +6,27 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+
+        GameCharacter.eat();    // call a static class method -> without instantiation of class
+
+        GameCharacter character1 = new GameCharacter("Homer", 14);  // create an instance (object) of class
+        System.out.println(character1.me());
+
+        System.out.println("attack = " + character1.attack());
+
+        GameCharacter character2 = new GameCharacter("Bart");
+        System.out.println(character2.me());
+
+        character2.setStrength(15);
+        System.out.println(character2.me());
+
+        System.out.println(character1.getStrength());
+
+        System.out.println("char1 count = " + character1.count);    // static variables are same for each object of this class
+
+        System.out.println("char2 count = " + character2.count);
+
         System.out.println("Starting the game...");
-
-
-        /*
-        GameCharacter character = new GameCharacter("Homer");
-
-        character.walk(12);
-        character.attack();
-        // character.strength = -10;
-        character.setStrength(10);
-
-        int myCharacterStrength = character.getStrength();
-
-
-        GameCharacter character2 = new GameCharacter("Bart", 14);
-        */
 
 
         int input;
@@ -41,13 +46,16 @@ public class App {
                 int strength = Integer.parseInt(scanner.nextLine());
 
                 // TODO Create character
-                GameCharacter character3 = new GameCharacter(name, strength);
-                System.out.println("character created");
-                System.out.println(character3);
+
+                GameCharacter character = new GameCharacter(name, strength);
+
+                System.out.println("Character created");
+                System.out.println(character);
             }
 
         }while (input == 1);
 
         System.out.println("Game stopped. Bye bye!");
+
     }
 }
