@@ -12,12 +12,11 @@ public class App {
         // The 2-dimensional array is organized as matrices which can be represented as the collection of rows and columns.
 
         // creating and initializing two-dimensional array - 2 "rows" and 3 "cols"
-        int[][] arr = new int[3][3]; // 0
+        int[][] arr = new int[2][4]; // initialized with all zeros
 
         int cnt = 0;
         for (int i = 0; i < arr.length; i++) { // rows
             for (int j = 0; j < arr[i].length; j++) { // cols
-                //System.out.print(arr[i][j] + " ");
                 arr[i][j] = cnt;
                 cnt++;
                 System.out.print(arr[i][j] + " ");
@@ -34,7 +33,7 @@ public class App {
                 {2}
         };
 
-        int posX = arrInt[2][1];
+        int posX = arrInt[1][1];
 
         System.out.println(posX);
 
