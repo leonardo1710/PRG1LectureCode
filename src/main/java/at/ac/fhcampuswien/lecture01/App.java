@@ -23,7 +23,7 @@ public class App {
         System.out.println(100 - 50);   // prints 50
 
         /** Escape Characters **/
-        System.out.println("I'm followed by 2 linebreaks\n\nNext will be 3 tab spaces\t\t\tTo use single quotes inside a string you must escape them \"Hello!\"");
+        System.out.println("I'm followed by 2 linebreaks\n\nNext will be 3 tab spaces\t\t\tTo use quotes inside a string you must escape them \"Hello!\"");
         System.out.println("You can also do some multiline console prints like this:\n"
                 + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper et sapien vel placerat. "
                 + "Phasellus efficitur in felis et varius. Vivamus at sollicitudin nunc. Nulla facilisi.\n "
@@ -41,7 +41,7 @@ public class App {
         /** Variable Declaration and Initialisation **/
         int myInteger = 1; // declaration and initialisation variable of type integer
         String myCharacterSequence = "Hello World!"; // declaration and initialisation variable of type String
-        int mySecondInteger; // declaration WITHOUT initialisation -> the value of mySecondInteger is Null
+        int mySecondInteger; // declaration WITHOUT initialisation -> the value of mySecondInteger is 0
 
         System.out.println(myInteger);  // prints "1" to the console
         System.out.println(myInteger + 2); // prints the sum of 1 + 2 -> "3"
@@ -64,7 +64,7 @@ public class App {
         int a = 1;
         System.out.println(a++ + ++a); //4
         int b = 1;
-        System.out.println(b++ + b++); //3
+        System.out.println(b++ + b++); //3 -> the ++ after the variable is increasing b AFTER the sum is calculated
         System.out.println("b's value is " + b + " now.");
 
         /** Variable Types **/
@@ -92,7 +92,7 @@ public class App {
         int myInt = 230000000;
 
         // overflow example
-        int maxInt = Integer.MAX_VALUE;
+        int maxInt = Integer.MAX_VALUE; // gets the max value of Integer type
         System.out.println("Highest int value: " + maxInt);
         maxInt++;
         System.out.println("Int overflow example: " + maxInt);
@@ -169,9 +169,6 @@ public class App {
         }
 
 
-
-
-
         // IF-ELSE Statement
         if(age >= 18){
             System.out.println("The age is >= 18");  // this line is only executed if age is >= 18
@@ -192,13 +189,6 @@ public class App {
 
         /** SWITCH Statement **/
         // Is normally used to define small limited cases that can happen
-        String fruit = "Apple";
-
-        if("Apple" == "apple"){
-
-        }
-
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your age:");
         String age2 = scanner.nextLine();
@@ -222,12 +212,14 @@ public class App {
         switch (userInput) {
             case 1:
             case 2:
-                System.out.println("You tipped 2.");
+                System.out.println("You tipped 1 OR 2.");
                 break;
             default:
                 System.out.println("You tipped something else.");
                 break;
         }
+
+        String fruit = "Apple";
 
         switch (fruit){
             case "apple":

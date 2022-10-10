@@ -14,7 +14,7 @@ public class JavaMethods {
         // calling methods
         printWelcomeMessage();
 
-        printCustomWelcomeMessage("Leon");
+        // printCustomWelcomeMessage("Leon");
 
         int mySum = sum(4, 5);
         System.out.println("Sum = " + mySum);
@@ -23,7 +23,9 @@ public class JavaMethods {
         int y = 4;
         System.out.println("Sum = " + sum(x,y));
 
-        System.out.println(divide(x, y));
+        // System.out.println(divide(x, y));
+
+        // printTable();
     }
 
     /**
@@ -75,6 +77,22 @@ public class JavaMethods {
             printCustomWelcomeMessage(name);
         } else {
             System.out.println("You are not an active user anymore..");
+        }
+    }
+
+    /**
+     * Other methods can be called from within methods
+     */
+    public static void printTable() {
+        for(int i = 0; i <= 3; i++) {
+            printTableRow();
+            System.out.println();
+        }
+    }
+
+    public static void printTableRow() {
+        for(int i = 0; i <= 3; i++) {
+            System.out.print("* ");
         }
     }
 }
