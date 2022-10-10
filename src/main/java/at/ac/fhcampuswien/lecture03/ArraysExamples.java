@@ -2,7 +2,7 @@ package at.ac.fhcampuswien.lecture03;
 
 import java.util.Scanner;
 
-public class Group1ArraysMethods {
+public class ArraysExamples {
     public static void main(String[] args) {
         int[] myArr = new int[5]; // {0,0,0,0,0}
 

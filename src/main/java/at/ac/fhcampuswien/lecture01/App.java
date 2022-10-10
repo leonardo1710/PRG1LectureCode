@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien.lecture01;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class App {

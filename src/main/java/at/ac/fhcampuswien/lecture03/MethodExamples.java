@@ -9,7 +9,7 @@ package at.ac.fhcampuswien.lecture03;
  *      Reusability
  *      Structuring
  */
-public class JavaMethods {
+public class MethodExamples {
     public static void main(String[] args) {
         // calling methods
         printWelcomeMessage();

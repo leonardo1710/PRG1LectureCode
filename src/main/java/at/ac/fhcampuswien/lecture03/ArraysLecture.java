@@ -1,17 +1,18 @@
 package at.ac.fhcampuswien.lecture03;
 
+import java.util.Arrays;
 /**
  * Arrays:
  *  Common data structure available in most programming languages
  *  All elements are of same type
  *  Arrays are also objects in Java
  */
-public class Arrays {
-    public static void main(String[] args) {
-        String[] myFruitsArray; // declare array of string elements without initialisation
-        int[] myNumberArray = new int [5];  // declaration and initialisation of integer array of length 5 - is initialized with all zeros [0,0,0,0,0]
+public class ArraysLecture {
 
-        printArray(myNumberArray);
+    public static void main(String[] args) {
+        String[] myFruitsArray = new String[3]; // declare array of string elements without initialisation
+        int[] myNumberArray = new int [5];  // declaration and initialisation of integer array of length 5 - is initialized with all zeros [0,0,0,0,0]
+        //printArray(myNumberArray);
 
         // set values of elements at special index
         myNumberArray[0] = 1;
@@ -19,6 +20,19 @@ public class Arrays {
         myNumberArray[2] = 3;
         myNumberArray[3] = 4;
         myNumberArray[4] = 5;
+
+        // set values when initialising
+        int[] numbers = {0, 100, -2, 7};
+
+        System.out.println("last number: " + numbers[3]);
+        System.out.println(Arrays.toString(numbers));
+
+
+        for(int i = 0; i < numbers.length; i++){
+            System.out.print(numbers[i] * numbers[i] + " ");
+        }
+
+/*
 
         myFruitsArray = new String[3];  // string arrays are initialized with null values
         printArray(myFruitsArray);
@@ -35,8 +49,11 @@ public class Arrays {
         }
          */
 
+        /*
         int[] myMultipliedArray = multiply(myNumberArray);
         printArray(myMultipliedArray);
+
+         */
     }
 
     public static void printArray(int[] myArr){
