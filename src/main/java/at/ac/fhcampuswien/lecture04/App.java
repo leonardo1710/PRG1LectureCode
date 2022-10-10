@@ -16,7 +16,6 @@ public class App {
 
         GameCharacter myChar2 = new GameCharacter("Bart", 10);
 
-
         GameCharacter.eat();
         GameCharacter.eat();
 

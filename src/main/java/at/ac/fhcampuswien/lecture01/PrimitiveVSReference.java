@@ -11,8 +11,6 @@ public class PrimitiveVSReference {
         message = message.toLowerCase();
         System.out.println("original message: " + message);
 
-
-        /*
         int x = 0;
 
         System.out.println("x: " + x);
@@ -21,7 +19,7 @@ public class PrimitiveVSReference {
 
         y = 2;
 
-        System.out.println("x: " + x);
+        System.out.println("x: " + x);  // value changes in primitive types dont affect other values of primitive types
 
         Date date = new Date();
         date.setTime(100);
@@ -32,8 +30,6 @@ public class PrimitiveVSReference {
 
         date.setTime(128000);
 
-        System.out.println("date2: " + date2);
-
-         */
+        System.out.println("date2: " + date2);  // changes in reference type date affect date2!
     }
 }
