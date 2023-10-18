@@ -47,8 +47,6 @@ public class App {
 
         Collections.sort(people);
 
-
-
     }
 
     public void addPerson(Person p){

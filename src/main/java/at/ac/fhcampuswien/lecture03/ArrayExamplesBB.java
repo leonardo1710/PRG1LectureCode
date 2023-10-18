@@ -17,8 +17,6 @@ public class ArrayExamplesBB {
         printStarTable(rows, cols);
 
 
-        printStarTable(3, 4);
-
         System.out.println("###########");
         printStarTable(10, 2);
         System.out.println("###########");

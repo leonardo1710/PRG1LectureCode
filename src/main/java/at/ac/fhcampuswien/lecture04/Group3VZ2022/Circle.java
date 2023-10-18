@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.lecture04.VZGroup3;
+package at.ac.fhcampuswien.lecture04.Group3VZ2022;
 
 public class Circle {
     // object variable

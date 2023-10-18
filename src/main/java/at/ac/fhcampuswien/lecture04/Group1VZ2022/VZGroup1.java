@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.lecture04.VZGroup1;
+package at.ac.fhcampuswien.lecture04.Group1VZ2022;
 
 public class VZGroup1 {
 
