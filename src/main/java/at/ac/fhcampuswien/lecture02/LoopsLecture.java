@@ -15,9 +15,9 @@ public class LoopsLecture {
 
         printPyramid();
 
-        printOtherPyramid();
+        //printOtherPyramid();
 
-        //printAlphabetPyramid();
+        // printAlphabetPyramid();
 
         //scannerExamples();
     }
@@ -135,9 +135,9 @@ public class LoopsLecture {
     public static void printPyramid(){
         for(int rows = 0; rows < 5; rows++){
             for(int cols = 0; cols < rows; cols++){
-                System.out.print("*");
+                System.out.print("* ");
             }
-            System.out.println();
+            //System.out.println();
         }
     }
 
