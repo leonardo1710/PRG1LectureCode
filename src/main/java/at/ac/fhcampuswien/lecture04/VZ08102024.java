@@ -155,6 +155,39 @@ public class VZ08102024 {
 //        "scissors", "paper" --> "Player 1 won!"
 //        "scissors", "rock" --> "Player 2 won!"
 //        "paper", "paper" --> "Draw!"
+//
+//        int p1 = 0;
+//        int p2 = 0;
+//
+//        Scanner scanner = new Scanner(System.in);
+//
+//        for (int i = 0; i < 3; i++) {
+//            System.out.println("Player 1:");
+//            String player1 = scanner.nextLine();
+//            System.out.println("Player 2:");
+//            String player2 = scanner.nextLine();
+//
+//            if(player1.equals(player2)) {
+//                //System.out.println("its a draw!");
+//            } else if (player1.equalsIgnoreCase("scissors") && player2.equalsIgnoreCase("paper") ||
+//                    player1.equalsIgnoreCase("stone") && player2.equalsIgnoreCase("scissors") ||
+//                    player1.equalsIgnoreCase("paper") && player2.equalsIgnoreCase("stone"))
+//            {
+//                //System.out.println("Player 1 wins!");
+//                p1++;
+//            } else {
+//                //System.out.println("Player 2 wins!");
+//                p2++;
+//            }
+//        }
+//
+//        if (p1 > p2) {
+//            System.out.println("Player 1 wins!");
+//        } else if (p2 > p1) {
+//            System.out.println("Player 2 wins!");
+//        } else {
+//            System.out.println("its a draw!");
+//        }
 
         //Example 9
         //add the logic to select a winner after 3 rounds of rock, paper, scissors to example 8
@@ -169,6 +202,21 @@ public class VZ08102024 {
 //        960000 -> 96
 //        1050 -> 105
 //        -1050 -> -105
+
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("enter a number");
+            int number = scanner.nextInt();
+
+            while(number%10 == 0){
+                number = number/10;
+            }
+            System.out.println("number without zeros: " + number);
+        }
+
+
+
 
     }
 }
