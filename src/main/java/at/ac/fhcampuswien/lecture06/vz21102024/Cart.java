@@ -1,10 +1,12 @@
 package at.ac.fhcampuswien.lecture06.vz21102024;
 
 public class Cart {
+    int userId;
     private Product[] products;
 
-    public Cart(Product[] products) {
+    public Cart(Product[] products, int userId) {
         this.products = products;
+        this.userId = userId;
     }
 
     public Product[] getProducts() {
@@ -37,6 +39,16 @@ public class Cart {
         }
 
         return sum;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(!(obj instanceof Cart)) return false;
+
+        Cart cart = (Cart) obj;
+
+        return this.userId == cart.userId;
     }
 
     public double getTotalInclusiveVat() {

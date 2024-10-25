@@ -16,7 +16,11 @@ public class App {
 //        products[0] = p1;
 //        products[1] = p2;
 //        products[2] = p3;
-        Cart cart = new Cart(new Product[]{p1, p2, p3});
+        Cart cart = new Cart(new Product[]{p1, p2, p3}, 1);
+        Cart cart2 = new Cart(new Product[]{p1, p2, p3}, 1);
+
+        System.out.println(cart == cart2);
+        System.out.println(cart.equals(cart2));
 
         Product p4 = new Product("spaghetti", 2.5, 0.2, 4);
         cart.addProduct(p4);
