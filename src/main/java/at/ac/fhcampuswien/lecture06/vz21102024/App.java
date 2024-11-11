@@ -30,8 +30,6 @@ public class App {
         }
 
         // call cart methods
-
-
         cart.removeProduct(p2);
 
 //        System.out.println(cart.getProducts().length);
@@ -42,5 +40,28 @@ public class App {
 
         System.out.println("The total of the cart is: " + cart.getTotal());
         System.out.println("The total incl. vat of the cart is: " + cart.getTotalInclusiveVat());
+
+        // object equality
+        Product p6 = new Product("apple", 1.50, 0.2, 1);
+        Product p7 = new Product("apple", 1.50, 0.2, 1);
+
+        System.out.println("p6 equals p7? " + p6.equals(p7)); // false
+        System.out.println(p6);
+        System.out.println(p7);
+
+        // copy by assignment
+        //p7 = p6;
+        //System.out.println("p6 equals p7? " + p6.equals(p7));
+
+        p7 = new Product(p6);
+
+
+        p6.title = "bananas";
+
+        System.out.println(p7.title);
+
+
+
+
     }
 }

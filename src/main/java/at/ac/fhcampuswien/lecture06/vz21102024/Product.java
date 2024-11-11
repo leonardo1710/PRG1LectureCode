@@ -1,7 +1,7 @@
 package at.ac.fhcampuswien.lecture06.vz21102024;
 
 public class Product {
-    private String title;
+    public String title;
     private double price;
     private double vat; // tax number in percentage: 0.00 - 1.00
     private int articleNumber;
@@ -11,6 +11,15 @@ public class Product {
         this.price = price;
         this.vat = vat;
         this.articleNumber = articleNumber;
+    }
+
+    public Product(Product p1) {
+        this(p1.title, p1.price, p1.vat, p1.articleNumber);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
     public double getPriceInclusiveVat() {
