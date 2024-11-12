@@ -12,7 +12,6 @@ public abstract class Creature {
 
     public abstract void attack(Creature creature);
 
-    // Method to reduce health when attacked
     public void takeDamage(int damage) {
         health -= damage;
         System.out.println(name + " took " + damage + " damage, health now: " + health);

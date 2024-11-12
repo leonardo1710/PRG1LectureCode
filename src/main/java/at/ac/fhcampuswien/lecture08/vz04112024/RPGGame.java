@@ -20,7 +20,6 @@ public class RPGGame {
         orc.takeDamage(10);
         troll.takeDamage(20);
 
-
         // TODO: Turn the troll to stone
 
     }
