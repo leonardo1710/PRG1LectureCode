@@ -1,4 +1,5 @@
-package at.ac.fhcampuswien.lecture10.vz19112024;
+package at.ac.fhcampuswien.lecture10.bb02122024;
+
 
 import java.util.*;
 
@@ -97,7 +98,7 @@ public class App {
 
         // SOLUTION - use generics and type parameters
         // GenericList interface
-        GenericList<String> myStrings = new ArrayGenereicList<>(5);
+        at.ac.fhcampuswien.lecture10.vz19112024.GenericList<String> myStrings = new at.ac.fhcampuswien.lecture10.vz19112024.ArrayGenereicList<>(5);
         myStrings.add("hello");
         myStrings.add("generics");
 
@@ -161,5 +162,5 @@ public class App {
             System.out.println(o);
         }
     }
-
 }
+
