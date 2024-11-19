@@ -2,14 +2,14 @@ package at.ac.fhcampuswien.lecture10.vz19112024;
 
 import java.util.Arrays;
 
-public class ArrayGenereicList<E> implements GenericList <E> {
+public class ArrayGenericList<E> implements GenericList <E> {
     private E[] elements;
     private int size = 0;
 
     @SuppressWarnings("unchecked")
-    public ArrayGenereicList(int capacity) {
+    public ArrayGenericList(int capacity) {
        if(capacity < 0) {
-           throw new IllegalArgumentException("Capacity mus be greater than 0");
+           throw new IllegalArgumentException("Capacity must be greater than 0");
        }
 
        // cannot create objects of parameterised type!

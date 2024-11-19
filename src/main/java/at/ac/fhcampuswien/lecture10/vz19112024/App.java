@@ -97,7 +97,7 @@ public class App {
 
         // SOLUTION - use generics and type parameters
         // GenericList interface
-        GenericList<String> myStrings = new ArrayGenereicList<>(5);
+        GenericList<String> myStrings = new ArrayGenericList<>(5);
         myStrings.add("hello");
         myStrings.add("generics");
 
@@ -105,7 +105,7 @@ public class App {
         System.out.println("element at index 1: " + myStrings.get(1));
 
 
-        GenericList<Integer> myNumbers = new ArrayGenereicList<>(3);
+        GenericList<Integer> myNumbers = new ArrayGenericList<>(3);
         myNumbers.add(10);
         myNumbers.add(20);
         myNumbers.add(4);

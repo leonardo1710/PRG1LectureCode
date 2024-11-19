@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien.lecture10.vz19112024;
 
+
 public class Member implements Comparable<Member>{
     private String name;
     private int height; // in cm
@@ -7,6 +8,11 @@ public class Member implements Comparable<Member>{
     public Member(String name, int height) {
         this.name = name;
         this.height = height;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.name;
     }
 
     public String getName() {
@@ -24,6 +30,8 @@ public class Member implements Comparable<Member>{
     public void setHeight(int height) {
         this.height = height;
     }
+
+
 
     @Override
     public int compareTo(Member o) {
