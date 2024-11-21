@@ -18,6 +18,4 @@ public abstract class Animal {
     public void eat(){
         System.out.println(this.name + " eats.");
     }
-
-
 }
