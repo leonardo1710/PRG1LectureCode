@@ -34,20 +34,61 @@ public class App {
         // TODO: create classes
 
         // TODO: initialize the store with its inventory
+        Store store = new Store();
+        store.printAllArticles();
 
         // TODO: initialize the cart
 
-        // TODO: implement the menu
+        Cart cart = new Cart();
+//        cart.printCart();
+//        cart.addToCart(1, store);
+//        cart.printCart();
+//
+//        cart.addToCart(2, store);
+//
+//        double sum = cart.checkout();
+//        System.out.println(sum);
 
-        System.out.println("\n--- Store Menu ---");
-        System.out.println("1. List all articles");
-        System.out.println("2. Add article to cart");
-        System.out.println("3. View cart");
-        System.out.println("4. Checkout");
-        System.out.println("5. Exit");
-        System.out.print("Choose an option: ");
 
         Scanner scanner = new Scanner(System.in);
+        int selection = 0;
+        // TODO: implement the menu
+        do {
+            System.out.println("\n--- Store Menu ---");
+            System.out.println("1. List all articles");
+            System.out.println("2. Add article to cart");
+            System.out.println("3. View cart");
+            System.out.println("4. Checkout");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+
+            selection = scanner.nextInt();
+
+            switch (selection) {
+                case 1:
+                    store.printAllArticles();
+                    break;
+                case 2:
+                    // TODO:
+                    System.out.println("Enter article id:");
+                    int id = scanner.nextInt();
+
+                    cart.addToCart(id, store);
+                    break;
+                case 3:
+                    cart.printCart();
+                    break;
+                case 4:
+                    System.out.println("your price: " + cart.checkout());
+                    break;
+                case 5:
+                    System.out.println("Exit");
+                    break;
+                default:
+                    System.out.println("Wrong input...");
+                    break;
+            }
+        } while (selection != 5);
 
 
     }
