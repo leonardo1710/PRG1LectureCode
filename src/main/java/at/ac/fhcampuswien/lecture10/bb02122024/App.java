@@ -1,8 +1,5 @@
 package at.ac.fhcampuswien.lecture10.bb02122024;
 
-
-import at.ac.fhcampuswien.lecture10.vz19112024.ArrayGenericList;
-
 import java.util.*;
 
 public class App {
@@ -100,7 +97,7 @@ public class App {
 
         // SOLUTION - use generics and type parameters
         // GenericList interface
-        at.ac.fhcampuswien.lecture10.vz19112024.GenericList<String> myStrings = new ArrayGenericList<>(5);
+        GenericList<String> myStrings = new ArrayGenericList<>(5);
         myStrings.add("hello");
         myStrings.add("generics");
 
@@ -108,7 +105,7 @@ public class App {
         System.out.println("element at index 1: " + myStrings.get(1));
 
 
-        GenericList<Integer> myNumbers = new ArrayGenereicList<>(3);
+        GenericList<Integer> myNumbers = new ArrayGenericList<>(3);
         myNumbers.add(10);
         myNumbers.add(20);
         myNumbers.add(4);
@@ -143,6 +140,30 @@ public class App {
         // here the type must be known!
         // set2 = new HashSet<?>();
 
+        /* Examples of Static Casts */
+//        List<Double> doubleList = List.of(20.1, 2.1);
+//        List<Integer> intList = doubleList; // compiler error: incompatoble types
+
+        Object obj = List.of("A", "B", "C");
+
+        // List<String> is a parameterized type.
+        // Due to type erasure, at runtime, List<String> and List<Integer> both become just List.
+        // The instanceof operator cannot distinguish between different parameterized types because the type information (String in this case) is erased at runtime.
+//        if(obj instanceof List<String>){
+//
+//        }
+
+        // The List<?> wildcard indicates "a list of some type," but it doesn't rely on specific type information that has been erased.
+        if(obj instanceof List<?>){
+
+        }
+
+        /* Examples of Dynamic Casts */
+//        List<Double> doubleList = List.of(22.1, 2.3344, 11.2);
+//        Object obj2 = doubleList;
+//        List<Integer> intList = (List<Integer>) obj2;   // ClassCastException at runtime
+//        Integer intValue = intList.get(1);
+
         // TODO: update printList method so it works with List<String>, List<Object> or any oder List<T> using wildcards
         List<Number> numbers = new ArrayList<>();
         numbers.add(1);
@@ -156,6 +177,25 @@ public class App {
         // printList(words);
 
         // TODO: update printList to be bounded to Object or its subtypes
+
+
+        /* Example of generic method that accepts all Number types to calculate sum of a list of numbers */
+        List<Integer> intList = List.of(1, 2, 3);
+        List<Double> doubleList = List.of(1.1, 2.2, 3.3);
+        List<Float> floatList = List.of(1.1f, 2.2f, 3.3f);
+
+        System.out.println("Sum of intList: " + calculateSum(intList));
+        System.out.println("Sum of doubleList: " + calculateSum(doubleList));
+        System.out.println("Sum of floatList: " + calculateSum(floatList));
+    }
+
+    // Generic method to calculate the sum of a list of numbers
+    public static <T extends Number> double calculateSum(List<T> list) {
+        double sum = 0.0; // accumulator as double to handle all number types
+        for (T number : list) {
+            sum += number.doubleValue(); // use doubleValue() for numeric conversion
+        }
+        return sum;
     }
 
     // TODO: this method should work with any List<T> as parameter
@@ -164,5 +204,21 @@ public class App {
             System.out.println(o);
         }
     }
-}
 
+    // Using wildcard operator
+//    public static void printList(List<? extends Object> list) {
+//        for (Object item : list) {
+//            System.out.println(item);
+//        }
+//    }
+
+    // using type parameter
+//    public static <T extends Object> void printList(List<T> list) {
+//        for (T item : list) {
+//            System.out.println(item);
+//        }
+//    }
+
+
+
+}

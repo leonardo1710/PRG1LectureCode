@@ -24,8 +24,8 @@ run {
 
 allprojects {
     tasks.withType(JavaCompile) {
-        sourceCompatibility = '1.8'
-        targetCompatibility = '1.8'
+        sourceCompatibility = JavaVersion.VERSION_16
+        targetCompatibility = JavaVersion.VERSION_16
     }
 }
 
