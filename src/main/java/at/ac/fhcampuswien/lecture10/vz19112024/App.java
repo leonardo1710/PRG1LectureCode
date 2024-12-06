@@ -3,12 +3,17 @@ package at.ac.fhcampuswien.lecture10.vz19112024;
 import java.util.*;
 
 public class App {
+
     public static void main(String[] args) {
+
+
         // ArrayList is a more convenient variant of arrays
         // dynamic -> resizable
-
         // create an ArrayList of type String
         List<String> fruits = new ArrayList<>();
+        // loop all fruits an filter beginning with "a"
+
+
         // add elements to the list
         fruits.add("banana");
         fruits.add("strawberry");

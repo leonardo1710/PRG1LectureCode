@@ -1,6 +1,6 @@
 package at.ac.fhcampuswien.lecture10.bb02122024;
 
-public class Member implements Comparable<Member>{
+public class Member implements Comparable<Member> {
     private String name;
     private int height; // in cm
 
@@ -24,6 +24,7 @@ public class Member implements Comparable<Member>{
     public void setHeight(int height) {
         this.height = height;
     }
+
 
     @Override
     public int compareTo(Member o) {

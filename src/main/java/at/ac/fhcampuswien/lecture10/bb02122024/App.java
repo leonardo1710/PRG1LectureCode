@@ -1,5 +1,9 @@
 package at.ac.fhcampuswien.lecture10.bb02122024;
 
+import at.ac.fhcampuswien.lecture07.bb08112024.Animal;
+import at.ac.fhcampuswien.lecture07.bb08112024.Cat;
+import at.ac.fhcampuswien.lecture07.bb08112024.Dog;
+
 import java.util.*;
 
 public class App {
@@ -9,6 +13,7 @@ public class App {
 
         // create an ArrayList of type String
         List<String> fruits = new ArrayList<>();
+
         // add elements to the list
         fruits.add("banana");
         fruits.add("strawberry");
@@ -48,6 +53,8 @@ public class App {
         // remove a value by key
         dictionary.remove("hallo");
 
+
+
         // Set is an unordered collection
         // and stores only unique objects - no duplications
         Set<String> mySet = new HashSet<>();
@@ -86,7 +93,13 @@ public class App {
         //      add(String element) - add a string to the list
         //      get(int index)      - read via index
         // so we create an interface ListOfStrings
-        ListOfStrings myStringList;
+        // then for concrete impl we create a class ArrayStringList that implements ListOfStrings interface
+        ArrayStringList myStringList = new ArrayStringList(10);
+        myStringList.add("hello");
+        myStringList.add("world!");
+
+        System.out.println(myStringList.get(0));
+        System.out.println(myStringList.get(1));
 
 
         // in the future we also want to manage lists of numbers
@@ -107,11 +120,13 @@ public class App {
 
         GenericList<Integer> myNumbers = new ArrayGenericList<>(3);
         myNumbers.add(10);
+
         myNumbers.add(20);
         myNumbers.add(4);
 
         System.out.println("Integer list: " + myNumbers);
         System.out.println("Element at index 1: " + myNumbers.get(1));
+
 
 
         // GENERICS and SUBTYPING
@@ -124,6 +139,9 @@ public class App {
         // To prevent such unsafe operations, Java enforces invariance in generics.
         // This means List<String> and List<Object> are distinct and incompatible types.
 
+
+        // INVARIANT: if you have a generic type like List<T>, it is considered invariant when
+        // List<A> and List<B> are not related at all, even if A and B have an inheritance relationship.
 
         // 1) WORK AROUND for limitations in invariant generics
         // using the WILDCARD operator - ?
@@ -138,7 +156,7 @@ public class App {
         set2 = new HashSet<Object>();
         // but not possible to create objects with wildcard
         // here the type must be known!
-        // set2 = new HashSet<?>();
+        //set2 = new HashSet<?>();
 
         /* Examples of Static Casts */
 //        List<Double> doubleList = List.of(20.1, 2.1);
@@ -148,7 +166,8 @@ public class App {
 
         // List<String> is a parameterized type.
         // Due to type erasure, at runtime, List<String> and List<Integer> both become just List.
-        // The instanceof operator cannot distinguish between different parameterized types because the type information (String in this case) is erased at runtime.
+        // The instanceof operator cannot distinguish between different parameterized types because
+        // the type information (String in this case) is erased at runtime.
 //        if(obj instanceof List<String>){
 //
 //        }
@@ -169,32 +188,59 @@ public class App {
         numbers.add(1);
         numbers.add(2);
 
+
         List<String> words = new ArrayList<>();
         words.add("hello");
         words.add("another");
 
-        // printList(numbers);
-        // printList(words);
+        printList(words);
+//        printList(numbers);
+//        printList(words);
 
-        // TODO: update printList to be bounded to Object or its subtypes
+        // TODO: update printList to be bounded to Animal or its subtypes
+        List<Dog> dogs = new ArrayList<>();
+        Dog goofy = new Dog();
+        Dog odie = new Dog();
+
+        dogs.add(goofy);
+        dogs.add(odie);
+
+        List<Cat> cats = new ArrayList<>();
+        Cat garfield = new Cat();
+        cats.add(garfield);
+
+//        printList(dogs);
+//        printList(cats);
 
 
         /* Example of generic method that accepts all Number types to calculate sum of a list of numbers */
-        List<Integer> intList = List.of(1, 2, 3);
-        List<Double> doubleList = List.of(1.1, 2.2, 3.3);
-        List<Float> floatList = List.of(1.1f, 2.2f, 3.3f);
+//        List<Integer> intList = List.of(1, 2, 3);
+//        List<Double> doubleList = List.of(1.1, 2.2, 3.3);
+//        List<Float> floatList = List.of(1.1f, 2.2f, 3.3f);
 
-        System.out.println("Sum of intList: " + calculateSum(intList));
-        System.out.println("Sum of doubleList: " + calculateSum(doubleList));
-        System.out.println("Sum of floatList: " + calculateSum(floatList));
+        //System.out.println("Sum of intList: " + calculateSum(intList));
+        //System.out.println("Sum of doubleList: " + calculateSum(doubleList));
+        //System.out.println("Sum of floatList: " + calculateSum(floatList));
     }
 
+
     // Generic method to calculate the sum of a list of numbers
-    public static <T extends Number> double calculateSum(List<T> list) {
-        double sum = 0.0; // accumulator as double to handle all number types
-        for (T number : list) {
-            sum += number.doubleValue(); // use doubleValue() for numeric conversion
+//    public static <T extends Number> double calculateSum(List<T> list) {
+//        double sum = 0.0; // accumulator as double to handle all number types
+//        for (T number : list) {
+//            sum += number.doubleValue(); // use doubleValue() for numeric conversion
+//        }
+////        Integer num = 2;
+////        list.add((T) num);
+//        return sum;
+//    }
+
+    public static double calculateSum(List<? extends Number> list) {
+        double sum = 0;
+        for (Number number : list) {
+            sum += number.doubleValue();  // Works because we know it's a subclass of Number
         }
+        //list.add(2); // does not work since we dont know type at compile time
         return sum;
     }
 
@@ -206,19 +252,11 @@ public class App {
     }
 
     // Using wildcard operator
-//    public static void printList(List<? extends Object> list) {
+//    public static void printList(List<? extends Animal> list) {
 //        for (Object item : list) {
 //            System.out.println(item);
 //        }
 //    }
-
-    // using type parameter
-//    public static <T extends Object> void printList(List<T> list) {
-//        for (T item : list) {
-//            System.out.println(item);
-//        }
-//    }
-
 
 
 }
