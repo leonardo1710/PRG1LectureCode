@@ -221,6 +221,35 @@ public class App {
         //System.out.println("Sum of intList: " + calculateSum(intList));
         //System.out.println("Sum of doubleList: " + calculateSum(doubleList));
         //System.out.println("Sum of floatList: " + calculateSum(floatList));
+
+        List<Integer> intList = List.of(1, 2, 3);
+        List<String> strList = List.of("a", "b", "c");
+
+        printListWildcard(intList);
+        printListWildcard(strList);
+
+        addToList(intList, 1);
+        addToList(strList, "hello");
+    }
+
+    // wildcard ? is flexible but limited
+    public static void printListWildcard(List<?> list) {
+        for (Object item : list) {
+            System.out.println(item);
+        }
+
+        // flexible reassignment possible
+        list = new ArrayList<Member>();
+    }
+
+    // using T provides type-safety
+    // T will be consistent - same type when calling the function
+    public static <T> void addToList(List<T> list, T item) {
+        list.add(item); // type-safe
+        System.out.println("Added item: " + item);
+
+        // this is not possible
+        // list = new ArrayList<Member>();
     }
 
 
